@@ -1,0 +1,11 @@
+.StatisticsItem{
+    
+     text-align: center; 
+    font-weight: 500;
+    font-size: 25px;
+}
+.PercentageItem,
+.TotalItem{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;}

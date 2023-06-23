@@ -1,8 +1,10 @@
 import styles from './FeedbackOptions.module.css';
-export const FeedbackOptions = ({options, onLeaveFeedback})=>{
-    return (
-        <ul className={styles.feedbackBtnList}>
-                  {options.map((option) => (
+import PropTypes from 'prop-types';
+
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return (
+    <ul className={styles.feedbackBtnList}>
+      {options.map((option) => (
         <li key={option}>
           <button
             type="button"
@@ -14,6 +16,10 @@ export const FeedbackOptions = ({options, onLeaveFeedback})=>{
           </button>
         </li>
       ))}
-        </ul>
-    )
+    </ul>
+  )
 }
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func.isRequired,
+  options:PropTypes.array.isRequired,
+};

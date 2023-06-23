@@ -3,6 +3,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions'
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+// import PropTypes from 'prop-types';
 export class App extends Component {
   // constructor(){
   //   super()
@@ -45,25 +46,28 @@ export class App extends Component {
     const totalFeedback = this.countTotalFeedback();
     return (
       <div>
-         <Section title="Please leave Feedback"> 
-          < FeedbackOptions 
-          options={['good', 'neutral', 'bad']}
-           onLeaveFeedback={this.countFeedbackStatistics} />
-         </Section > 
+        <Section title="Please leave Feedback">
+          < FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.countFeedbackStatistics} />
+        </Section >
 
-         <Section title="Statistic"> 
-         
-         { totalFeedback === 0
-         ? (<Notification message="There is no feedback" />)
-         :( <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={totalFeedback}
-          positivePercentage={this.countPositiveFeedbackPercentage()} />
-          )}
-           </Section > 
+        <Section title="Statistic">
+
+          {totalFeedback === 0
+            ? (<Notification message="There is no feedback" />)
+            : (<Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={totalFeedback}
+              positivePercentage={this.countPositiveFeedbackPercentage()} />
+            )}
+        </Section >
       </div>
     )
   }
 };
+// App.propTypes = {
+  
+// };
